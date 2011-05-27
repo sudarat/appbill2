@@ -1,0 +1,28 @@
+<center><h1>Select customer</h1></center>
+<% flash .each do |key, value| %>
+  <%= content_tag(:div, value, :class => "flash #{key}") %> 
+<% end %>
+<table>
+  <tr>
+    <th width = 100px>Customer</th>
+    <th></th>
+    <th>Address</th>
+    <th></th>
+  </tr>
+<%= link_to new, new_customer_path,:format => "html" ,:class=>"right"%>
+<% @customers.each do |customer| %>
+  <tr>
+    <td width = 100px><%= customer.name %></td>
+    <td></td>
+    <td><%= customer.address %></td>
+     <td><!--<%= link_to edit, edit_customer_path(customer,:format => "html") ,:class => "right" %> -->
+      <%= link_to ok,new_customer_quotation_path(customer,:format => "html"),:class => "right"%>
+    </td>
+    <!-- <td><%= link_to 'Destroy', customer, :confirm => 'Are you sure?', :method => :delete %></td> -->
+  </tr>
+<% end %>
+</table>
+
+
+
+

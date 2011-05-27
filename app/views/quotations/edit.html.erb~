@@ -1,0 +1,63 @@
+<%= javascript_include_tag :defaults, 'wysihat_engine_pack' %>
+<%= stylesheet_link_tag 'facebox', 'wysihat' %>
+
+<h1>Edit quotation</h1>
+<% flash .each do |key, value| %>
+  <% if value ==  "Description Error." %>
+  <%= content_tag(:div, value, :class => "descrip") %>
+  <% else %>
+  <%= content_tag(:div, value, :class => "flash #{key}") %> 
+  <% end %>
+<% end %>
+
+<%= form_for([@customer, @quotation]) do |q| %>
+
+  <% if @quotation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quotation.errors.count, "error") %> prohibited this quotation from being saved:</h2>
+
+      <ul>
+      <br />
+      <% @quotation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% else %><% cookies[:back] = request.referer %>
+  <% end %>
+
+  <div class="field">
+    <%= q.label :customer%><b> : </b>
+    <%= q.collection_select(:customer_id, Customer.all, :id,:name) %> <b><font color=red>&nbsp;*</font></b>
+  </div>
+  <div class="field">
+    <%= q.label :title , 'Project title'%><b> : </b>
+    <%= q.text_field :title ,:size=>60 %> <b><font color=red>&nbsp;*</font></b>
+  </div>
+  <div class="field">
+    <%= q.label :detail %><b> : </b>
+    <%= q.text_field :detail ,:size=>64 %> <b><font color=red>&nbsp;*</font></b>
+  </div>
+  <div class="field">
+    <%= q.label :terms %><b> : </b>
+    <%= q.text_field :terms ,:size=>5%> <b> Days<font color=red>&nbsp;*</font></b>
+  </div>
+  <div class="field">
+    <%= q.label :condition %><b> : </b><br />
+    <%= q.wysihat_editor :condition ,:class => "condition"%>
+  </div>
+
+  <center>
+  <div class = "actions">
+    <%= q.submit 'Submit'%>
+  </div>
+  </center>
+<% end %>
+
+  <%= render :partial => "quotadescrips/quotadescrip" %>
+
+  <%= render "quotadescrips/form"%>
+
+
+<%= link_to back, cookies[:back],:format => "html" %>
+<%= link_to show, customer_quotation_path(@customer,@quotation),:class=>"right" %>

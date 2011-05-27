@@ -1,0 +1,4 @@
+<h2>เพิ่มโปรเจค</h2>
+<%= render "bills/form" %>
+<% cookies[:back] = request.referer %>
+<%= link_to back, cookies[:back],:format => "html" %>

@@ -1,0 +1,2 @@
+module NewbillsHelper
+end

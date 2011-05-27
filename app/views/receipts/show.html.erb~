@@ -1,0 +1,54 @@
+<% flash .each do |key, value| %>
+  <%= content_tag(:div, value, :class => "flash #{key}") %> 
+<% end %>
+
+<h1 align = center>ใบสำคัญรับเงิน</h1>
+
+<font=3><b>ได้รับเงินจาก</b><br />
+<%= @customer.name %><br />
+<%= @customer.address %></font>
+
+<table>
+  <tr>
+    <th width="350"><center>Description</center></th>
+    <th></th>
+    <th width="25"><center>Quntity</center></th>
+    <th></th>
+    <th width="70"><center>Unit Price</center></th>
+    <th></th>
+    <th width="70"><center>Cost</center></th>
+  </tr>
+
+<% @receipt.receiptdescrips.each do |receiptdescrip| %> 
+<tr>
+  <td width="350"><%= receiptdescrip.description %></td>
+  <td></td>
+  <td width="25"><center><%= receiptdescrip.quantity %></center></td>
+  <td></td>
+  <td width="70"><center><%= receiptdescrip.unit_price %>.00</center></td>
+  <td></td>
+  <td width="70"><center><%= (receiptdescrip.unit_price)*(receiptdescrip.quantity) %>.00</center></td>
+<% end %>
+</tr>
+
+    <tr>
+      <td colspan=4 ></td> 
+      <td></td> 
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td colspan=4></td>
+      <td><center><b>Total</b></center></td> 
+      <td></td>
+      <td><center><b><%= @receipt.total_html %>.00</b></center></td> 
+    </tr>
+
+</table>
+
+<br />
+<%= link_to print,print_customer_receipt_path(@customer,@receipt),:format => "html", :target => '_blank' ,:class=>"right"%>
+<% cookies[:back] = request.referer %>
+<%= link_to back, cookies[:back],:format => "html" %>
+<%= link_to edit, edit_customer_receipt_path(@receipt.customer, @receipt),:format => "html" ,:class=>"right"%>

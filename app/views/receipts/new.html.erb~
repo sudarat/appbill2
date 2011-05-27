@@ -1,0 +1,4 @@
+<h2>เพิ่มใบ...</h2>
+<%= render "receipts/form" %>
+<% cookies[:back] = request.referer %>
+<%= link_to back, cookies[:back],:format => "html" %>

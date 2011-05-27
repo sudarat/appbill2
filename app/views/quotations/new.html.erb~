@@ -1,0 +1,4 @@
+<h2>New Quotation</h2>
+<%= render "quotations/form" %>
+<% cookies[:back] = request.referer %>
+<%= link_to back, cookies[:back],:format => "html" %>

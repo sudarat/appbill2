@@ -1,0 +1,70 @@
+<% flash .each do |key, value| %>
+  <%= content_tag(:div, value, :class => "flash #{key}") %> 
+<% end %>
+
+<h1 align = center>ใบแจ้งหนี้</h1>
+  <b>Project title : </b><%= @invoice.title %><br />
+
+
+<!--
+<%= link_to 'Back', @customer %>
+-->
+<!-- Description -->
+<table>
+  <tr>
+    <th width="350"><center>Description</center></th>
+    <th></th>
+    <th width="25"><center>Quntity</center></th>
+    <th></th>
+    <th width="70"><center>Unit Price</center></th>
+    <th></th>
+    <th width="70"><center>Cost</center></th>
+  </tr>
+
+<% @invoice.invoicedescrips.each do |invoicedescrip| %> 
+<tr>
+  <td width="350"><%= invoicedescrip.description %></td>
+  <td></td>
+  <td width="25"><center><%= invoicedescrip.quantity %></center></td>
+  <td></td>
+  <td width="70"><center><%= invoicedescrip.unit_price %>.00</center></td>
+  <td></td>
+  <td width="70"><center><%= (invoicedescrip.unit_price)*(invoicedescrip.quantity) %>.00</center></td>
+<% end %>
+</tr>
+
+<tr>
+      <td colspan=4></td>       
+      <td><center>Subtotal</center></td>
+      <td></td>
+      <td><center><%= @invoice.subtotal_html %>.00</center></td>
+    </tr>
+
+    <tr>
+      <td colspan=4 ></td> 
+      <td><center>Tax 7.00%</center></td> 
+      <td></td>
+      <td><center><%= @invoice.tax_html %>.00</center></td>
+    </tr>
+
+    <tr>
+      <td colspan=4></td>
+      <td><center><b>Total</b></center></td> 
+      <td></td>
+      <td><center><b><%= @invoice.total_html %>.00</b></center></td> 
+    </tr>
+
+</table>
+
+
+<!--
+<h2>Add a description</h2>
+<%= render "invoicedescrips/form"%>
+-->
+
+<br />
+<!-- :target => '_blank' -->
+<%= link_to print,print_customer_invoice_path(@customer,@invoice),:format => "html", :target => '_blank' ,:class=>"right"%>
+<% cookies[:back] = request.referer %>
+<%= link_to back, cookies[:back],:format => "html" %>
+<%= link_to edit, edit_customer_invoice_path(@invoice.customer, @invoice),:format => "html" ,:class=>"right"%>

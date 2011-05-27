@@ -1,0 +1,44 @@
+h2 {
+ color: black;
+}
+
+table.tdesc{
+border-collapse:collapse; 
+empty-cells:hide;
+}
+
+.bgdescquo {
+ background: url('/images/blue.gif') repeat;
+}
+
+.bgdescinv {
+ background: url('/images/red.gif') repeat;
+}
+
+.bordertop {
+  border-top: 1px solid black; 
+}
+
+.borderright {
+  border-right: 1px solid black;
+}
+
+.borderleft {
+  border-left: 1px solid black;
+}
+
+.borderbottom {
+  border-bottom: 1px solid black;
+}
+
+.borderdetail {
+  border-top: 1px solid black; 
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.foot {
+  background: url('/images/foot.jpg') repeat;
+  
+}

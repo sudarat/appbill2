@@ -1,0 +1,8 @@
+<%= l= @quotation.condition.length %>
+
+<!-- <%= @quotation.condition[3..l] %> -->
+
+
+<% for i in 1..l do %>
+    <%= @quotation.condition[i] %>
+<%end%>

@@ -1,0 +1,46 @@
+module ApplicationHelper
+  
+  def logo
+    image_tag("codeapp.jpeg",:alt => "Sample App" , :class => "round",:width => "160",:height => "60")
+  end
+  
+  def edit
+    image_tag("icon-edit.gif",:alt => "Edit",:title => "edit",:width => "25",:height => "25")
+  end
+  
+  def show
+    image_tag("icon-show.gif",:alt => "Show",:title => "show",:width => "25",:height => "25")
+  end
+  
+  def delete
+    image_tag("icon-delete.gif",:title => "delete",:alt => "Delete",:width => "25",:height => "25")
+  end
+  
+  def ok
+    image_tag("icon-ok.png",:alt => "OK",:title => "select",:width => "25",:height => "25")
+  end
+  
+  def editdesc
+    image_tag("icon-edit.gif",:alt => "Edit",:title => "edit",:width => "20",:height => "20")
+  end
+  
+  def deletedesc
+    image_tag("icon-delete.gif",:title => "delete",:alt => "Delete",:width => "20",:height => "20")
+  end
+
+  def new
+    image_tag("icon-addcustomer.jpeg",:title => "new",:alt => "new",:width => "25",:height => "25")
+  end
+  
+  def back
+    image_tag("icon-back.jpg",:title => "back",:alt => "back",:width => "25",:height => "25")
+  end
+  
+  def print
+    image_tag("icon-print.jpeg",:title => "print",:alt => "print",:width => "25",:height => "25")
+  end
+
+  def head_c
+    image_tag("head/customer1.jpg",:alt => "customer",:onmouseover=>"this.src='head/home2.jpg';" ,:onmouseout=>"this.src='head/home1.jpg';")
+  end
+end

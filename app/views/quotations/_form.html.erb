@@ -1,0 +1,37 @@
+<%= form_for([@customer, @customer.quotations.build]) do |q| %>
+
+  <% if @quotation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quotation.errors.count, "error") %> prohibited this quotation from being saved:</h2>
+
+      <ul>
+      <br />
+      <% @quotation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <%else%><% cookies[:back] = request.referer %>
+  <% end %>
+
+  <div class="field">
+    <%= q.label :title , 'Project title'%><b> : </b>
+    <%= q.text_field :title ,:size=>60%> <b><font color=red>&nbsp;*</font></b>
+  </div>
+  <div class="field">
+    <%= q.label :detail %><b> : </b>
+    <%= q.text_field :detail ,:size=>64%> <b><font color=red>&nbsp;*</font></b>
+  </div>
+  <div class="field">
+    <%= q.label :terms %><b> : </b>
+    <%= q.text_field :terms ,:size=>5%> Days<b><font color=red>&nbsp;*</font></b>
+  </div>
+  <div class="field">
+    <%= q.label :condition %><b> : </b><br />
+    <%= q.text_area :condition ,:class => "condition"%>
+  </div>
+
+  <div class = "actions">
+    <%= q.submit%>
+  </div>
+<% end %>

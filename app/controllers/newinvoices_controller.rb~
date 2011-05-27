@@ -1,0 +1,5 @@
+class NewinvoicesController < ApplicationController
+  def index
+  end
+
+end

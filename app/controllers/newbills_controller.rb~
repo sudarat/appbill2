@@ -1,0 +1,5 @@
+class NewbillsController < ApplicationController
+  def index
+  end
+
+end

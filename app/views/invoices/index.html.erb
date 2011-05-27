@@ -1,0 +1,38 @@
+<h1 align = center>Invoices</h1>
+
+<% flash .each do |key, value| %>
+  <%= content_tag(:div, value, :class => "flash #{key}") %> 
+<% end %>
+<%= link_to new, newinvoices_path,:format => "html" , :class => "right"%>
+<table>
+  <tr>
+    <th width="5%">Invoice-ID</th>
+    <th></th>
+    <th width="10%">Customer</th>
+    <th></th>
+    <th width="55%">Invoice</th>
+    <th></th>
+    <th width="20%"></th>
+  </tr>
+
+<% @invoices.each do |i| %>
+  <tr>
+    <td><%= i.id%>-<%= (i.created_at.year)+543 %></td>
+    <td></td>
+    <td><%= i.customer.name%></td>
+    <td></td>
+    <td><%= i.title %></td>
+    <td></td>
+    <td><%= link_to delete, [i.customer , i ],:format => "html",:confirm => "Are you sure?" ,:method => :delete , :class => "right"%>
+    <div class = "right">|</div>
+    <%= link_to edit, edit_customer_invoice_path(i.customer, i),:format => "html" , :class => "right"%>
+    <div class = "right">|</div>
+    <%= link_to show, ([i.customer, i]),:format => "html" , :class => "right"%>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<!--
+<%= link_to 'เพิ่มใบเสนอราคา' , newreports_path %>
+-->

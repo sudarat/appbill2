@@ -1,0 +1,50 @@
+<h1>Edit invoice</h1>
+
+<% flash .each do |key, value| %>
+  <% if value ==  "Description Error." %>
+  <%= content_tag(:div, value, :class => "descrip") %>
+  <% else %>
+  <%= content_tag(:div, value, :class => "flash #{key}") %> 
+  <% end %>
+<% end %>
+
+<%= form_for([@customer, @invoice]) do |i| %>
+
+  <% if @invoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+      <ul>
+      <br />
+      <% @invoice.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <%else%><% cookies[:back] = request.referer %>
+  <% end %>
+
+  <div class="field">
+    <%= i.label :customer %><b> : </b>
+    <%= i.collection_select(:customer_id, Customer.all, :id,:name) %><b><font color=red>&nbsp;*</font></b>
+  </div>
+
+  <div class="field">
+    <%= i.label :title , 'Project title'%><b> : </b>
+    <%= i.text_field :title ,:size=>60%><b><font color=red>&nbsp;*</font></b>
+  </div>
+
+  <div class = "actions">
+    <center><%= i.submit %></center>
+  </div>
+<% end %>
+
+
+<%= render :partial => "invoicedescrips/invoicedescrip" %>
+
+<%= render "invoicedescrips/form"%>
+
+
+<%= link_to back, cookies[:back],:format => "html" %>
+<%= link_to show, customer_invoice_path(@customer,@invoice),:class=>"right" %>
+

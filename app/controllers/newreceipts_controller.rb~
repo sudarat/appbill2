@@ -1,0 +1,5 @@
+class NewreceiptsController < ApplicationController
+  def index
+  end
+
+end

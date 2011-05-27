@@ -1,0 +1,83 @@
+
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<table width="100%" height="100%" border = "0" align =center>
+<THEAD>
+  <tr height=30><td colspan=3 valign="top">
+    <table border=0 width ="100%" class="tdesc " >
+    <tr>
+      <td width="38%" valign="top"><%= image_tag("logo.jpg",:width => "170",:height => "60")%></td> 
+      <td width="50%" valign="botton"><p style="margin-top : 1.5em;"><b><font size=4>ใบกำกับภาษี</font></p></b></td> 
+    </tr>
+    </table>
+  </td></tr>
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  <tr height=25>
+    <td valign="top"><font size=3><b>ผู้ซื้อ:</b>&nbsp;&nbsp;<%= @customer.name %></font></td>
+    <td valign="top" width="45%"><font size=3><b>เลขที่:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+    <%= "%02d" % @bill.id%>/<%= Time.now.year+543 %></font></td>
+  </tr>
+  <tr height=25>
+    <td ROWSPAN=2 valign="top" height=50><b>ที่อยู่:</b>&nbsp;&nbsp;<%= @customer.address %></td>
+    <td valign="top"><font size=3><b>วันที่:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+    <%= Time.now.day%>/<%= "%02d" % Time.now.month%>/<%= Time.now.year+543 %></font></td>
+  </tr>
+  <tr height=25>
+    <td valign="top"><font size=3><b>เลขประจำตัวผู้เสียภาษี:</b> 3-0343-3039-6</font></td>
+  </tr>
+</THEAD>
+<TBODY>
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  <tr height=25><td colspan=3 valign="middle"><p><font size=3>PROJECT TITLE : <%= @bill.title %></p></font></td></tr>
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  <tr><td colspan=3 valign="top">
+    <table border=0 width ="100%" class="tdesc ">
+    <tr align="center" class="bgdescinv borderbottom" valign=middle height=25>
+      <td class="borderright" width="55%"><font size=2 color="FFFFFF"><b>รายการ</b></td> 
+      <td class="borderright" width="15%"><font size=2 color="FFFFFF"><b>Quantity</b></td> 
+<!--       <td class="bgdescinv bordertop" width="1%">฿</td> -->
+      <td class="borderright" width="15%"><font size=2 color="FFFFFF"><b>Unit Price</b></td> 
+<!--       <td class="bgdescinv bordertop" width="1%">฿</td> -->
+      <td><font size=2 width="15%" color="FFFFFF"><b>Cost</b></td></tr>
+    <font size=2><%= raw(@bill.details_html) %></font>
+    </tr>
+
+    <tr valign=middle height=25>
+      <td colspan=2 class="bordertop"></td> 
+      <td class="bordertop borderright" align="center"><font size = 2>Subtotal</font></td> 
+      <td align= right class="bordertop"><font size = 2><%= @bill.subtotal_html %>.00</font></td>
+    </tr>
+
+    <tr valign=middle height=25>
+      <td colspan=2 class="bordertop"></td> 
+      <td class="bordertop borderright" align="center"><font size = 2>Tax 7.00%</font></td> 
+      <td align= right bgcolor="#FFFFFF" class="bordertop"><font size = 2><%= @bill.tax_html %>.00</td>
+    </tr>
+
+    <tr valign=middle height=25>
+      <td colspan=2 class="bgdescinv bordertop"></td>
+      <td class="borderright bgdescinv bordertop" align="center"><font size=2 color="FFFFFF"><b>Total</b></font></td> 
+      <td align= right class="bgdescinv bordertop"><font size=2 color="FFFFFF"><b><%= @bill.total_html %>.00</b></td> 
+    </tr>
+  </table>
+  </td></tr>
+</TBODY>
+
+<TFOOT>
+  <tr><td colspan=3 valign="top">
+    <table width="100%" align="center" class="tdesc">
+
+      <tr valign=top align=center >
+	<td width = "50%" class="bordertop borderright borderbottom"><font size = 2><b>สำหรับลูกค้า</b></font></td> 
+	<td class="bordertop borderbottom"><font size = 2><b>ผู้ส่งสินค้า</b></font></td>
+      </tr>
+      <tr align = center>
+	<td class="borderbottom borderright" valign="bottom"><font size = 2>วันที่  ..../..../........</font></td> 
+	<td class="borderbottom" ><font size = 2><br /><br /><br /><br /><br />นายรวิทัต  ภู่หลำ</font><br /><font size=1.5>Chief Software Architect</td>
+      </tr>
+    </table>
+  </td>
+</font>
+</TFOOT>

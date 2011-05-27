@@ -1,0 +1,70 @@
+<%= javascript_include_tag :defaults, 'wysihat_engine_pack' %>
+<%= stylesheet_link_tag 'facebox', 'wysihat' %>
+
+<% flash .each do |key, value| %>
+  <%= content_tag(:div, value, :class => "flash #{key}") %> 
+<% end %>
+
+<h1 align = center>ใบเสนอราคา</h1>
+  <p><b>Project title : </b><%= @quotation.title %></p>
+  <p><b>Detail : </b><%= @quotation.detail %></p>
+  <p><b>Terms : </b><%= @quotation.terms %> Days</p>
+  
+
+<!--
+<%= link_to 'Back', @customer %>
+-->
+<!-- Description -->
+
+<table>
+  <tr>
+    <th width="350"><center>Description</center></th>
+    <th></th>
+    <th width="25"><center>Quntity</center></th>
+    <th></th>
+    <th width="100"><center>Unit Price</center></th>
+  </tr>
+
+<% @quotation.quotadescrips.each do |quotadescrip| %> 
+<tr>
+  <td width="350"><%= quotadescrip.description %></td>
+  <td></td>
+  <td width="25"><center><%= quotadescrip.quantity %></center></td>
+  <td></td>
+  <td width="100"><center><%= quotadescrip.unit_price %></center></td>  
+<% end %>
+</tr>
+
+</table>
+
+<!--   <%= h= (@quotation.condition.length)/90%> -->
+  <% line=0 %>
+  <% if (@quotation.condition != "")%>
+    <b>condition : </b><br />
+    <% @quotation.condition.split(/\r\n/).each do |instruction| %>
+    <% line=line+1 %>
+    <% end %>
+  <% end %>
+<!--   <%= line %>  -->
+
+<!--   <%= form_for([@customer, @quotation]) do |q| %>
+  <div class="field">
+    <%= q.wysihat_editor :condition, :buttons => [],:class=>"condition",:disabled => 'disabled',:class=>"showeditor"%>
+  </div>
+
+  <% end %> -->
+
+<!--       <% s=@quotation.condition %>  -->
+<!--     <%= s %> -->
+
+      <%= @quotation.condition %> 
+
+      <ruby>
+  漢 <rt><rp>(</rp>ㄏㄢˋ<rp>)</rp></rt>
+ </ruby> 
+
+
+<br />
+<%= link_to print, print_customer_quotation_path(@customer,@quotation,:format => "html"), :target => '_blank',:class=>"right" %>
+<%= link_to back, quotations_path,:format => "html" %>
+<%= link_to edit, edit_customer_quotation_path(@quotation.customer, @quotation) ,:format => "html",:class=>"right"%>

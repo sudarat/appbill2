@@ -1,0 +1,12 @@
+<html>
+
+<head>
+<title>Print tem.</title>
+<%= stylesheet_link_tag 'print',  :media => 'all'%>
+</head>
+<body >
+  <img src = "blue.gif">
+  <%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<header>
+<!--   <%= link_to logo, root_path%> -->
+
+  <nav class="round" >
+     <ul>
+	<li><%= link_to "Home",root_path ,:format => "html"%></li>
+	<li><%= link_to "Customers",customers_path ,:format => "html"%></li>
+
+	<li><%= link_to "Quotations", quotations_path ,:format => "html"%></li>
+	<li><%= link_to "Invoices", invoices_path ,:format => "html"%><br /></li>
+	<li><%= link_to "Bills", bills_path ,:format => "html",:target=>"_parent"%></li>	
+     </ul>
+   </nav>
+<br />
+  <img src="/images/head/home1.jpg" onmouseover="this.src='/images/head/home2.jpg';" onmouseout="this.src='/images/head/home1.jpg';" ><img src="/images/head/customer1.jpg" onmouseover="this.src='/images/head/customer2.jpg';" onmouseout="this.src='/images/head/customer1.jpg';" ><img src="/images/head/quota1.jpg" onmouseover="this.src='/images/head/quota2.jpg';" onmouseout="this.src='/images/head/quota1.jpg';" ><img src="/images/head/inv1.jpg" onmouseover="this.src='/images/head/inv2.jpg';" onmouseout="this.src='/images/head/inv1.jpg';" ><img src="/images/head/bill1.jpg" onmouseover="this.src='/images/head/bill2.jpg';" onmouseout="this.src='/images/head/bill1.jpg';" >
+
+
+
+ </header>

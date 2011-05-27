@@ -1,0 +1,52 @@
+<table>
+  <tr>
+    <th width="350"><center>Description</center></th>
+    <th></th>
+    <th width="25"><center>Quntity</center></th>
+    <th></th>
+    <th width="100"><center>Unit Price</center></th>
+    <th></th>
+    <th width="100"><center>Cost</center></th>
+  </tr>
+
+<% @receipt.receiptdescrips.each do |receiptdescrip| %> 
+<tr>
+  <td width="350"><%= receiptdescrip.description %></td>
+  <td></td>
+  <td width="25"><center><%= receiptdescrip.quantity %></center></td>
+  <td></td>
+  <td width="100"><center><%= receiptdescrip.unit_price %>.00</center></td>
+  <td></td>
+  <td width="100"><center><%= (receiptdescrip.unit_price)*(receiptdescrip.quantity) %>.00</center></td>
+<% end %>
+</tr>
+
+<tr>
+  <td width="350"></td>
+  <td></td>
+  <td width="25"></td>
+  <td></td>
+  <td width="100"><center><font size=2>Subtotal</font></center></td>
+  <td></td>
+  <td width="100"><center><font size=2><%= @receipt.subtotal_html %>.00</center></td>
+</tr>
+<tr>
+  <td width="350"></td>
+  <td></td>
+  <td width="25"></td>
+  <td></td>
+  <td width="100"><center><font size=2>Tax 7%</font></center></td>
+  <td></td>
+  <td width="100"><center><font size=2><%= @receipt.tax_html %>.00</center></td>
+</tr>
+<tr>
+  <td width="350"></td>
+  <td></td>
+  <td width="25"></td>
+  <td></td>
+  <td width="100"><center><font size=2><b>Total</b></font></center></td>
+  <td></td>
+  <td width="100"><center><font size=2><b><%= @receipt.total_html %>.00</b></center></td>
+</tr>
+
+</table>

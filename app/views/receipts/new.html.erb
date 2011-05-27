@@ -1,0 +1,4 @@
+<h2>New Receipt</h2>
+<%= render "receipts/form" %>
+<% cookies[:back] = request.referer %>
+<%= link_to back, cookies[:back],:format => "html" %>

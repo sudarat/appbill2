@@ -1,0 +1,79 @@
+<%= javascript_include_tag :defaults, 'wysihat_engine_pack' %>
+<%= stylesheet_link_tag 'facebox', 'wysihat' %>
+
+<% flash .each do |key, value| %>
+  <%= content_tag(:div, value, :class => "flash #{key}") %> 
+<% end %>
+
+<h1 align = center>ใบเสนอราคา</h1>
+<font size=3>
+  <b>Project title : </b><%= @quotation.title %><br />
+  <b>Detail : </b><%= @quotation.detail %><br />
+  <b>Terms : </b><%= @quotation.terms %> Days<br />
+</font>
+
+<!--
+<%= link_to 'Back', @customer %>
+-->
+<!-- Description -->
+
+<table>
+  <tr>
+    <th width="350"><center>Description</center></th>
+    <th></th>
+    <th width="25"><center>Quntity</center></th>
+    <th></th>
+    <th width="70"><center>Unit Price</center></th>
+    <th></th>
+    <th width="70"><center>cost</center></th>
+  </tr>
+
+<% @quotation.quotadescrips.each do |quotadescrip| %> 
+<tr>
+  <td width="350"><%= quotadescrip.description %></td>
+  <td></td>
+  <td width="25"><center><%= quotadescrip.quantity %></center></td>
+  <td></td>
+  <td width="70"><center><%= quotadescrip.unit_price %>.00</center></td>  
+  <td></td>
+  <td width="70"><center><%= (quotadescrip.unit_price)*(quotadescrip.quantity) %>.00</center></td>
+<% end %>
+</tr>
+
+    <tr>
+      <td colspan=4></td>       
+      <td><center>Subtotal</center></td>
+      <td></td>
+      <td><center><%= @quotation.subtotal_html %>.00</center></td>
+    </tr>
+
+    <tr>
+      <td colspan=4 ></td> 
+      <td><center>Tax 7.00%</center></td> 
+      <td></td>
+      <td><center><%= @quotation.tax_html %>.00</center></td>
+    </tr>
+
+    <tr>
+      <td colspan=4></td>
+      <td><center><b>Total</b></center></td> 
+      <td></td>
+      <td><center><b><%= @quotation.total_html %>.00</b></center></td> 
+    </tr>
+
+</table>
+
+<!--   <%= h= (@quotation.condition.length)/90%> -->
+  <% line=0 %>
+  <% if (@quotation.condition != "")%>
+    <b>เงื่อนไขการรับประกัน : </b>
+    <%= raw(@quotation.condition) %>
+  <% end %>
+
+
+
+<br />
+<%= link_to print, print_customer_quotation_path(@customer,@quotation,:format => "html"), :target => '_blank',:class=>"right" %>
+<% cookies[:back] = request.referer %>
+<%= link_to back, cookies[:back],:format => "html" %>
+<%= link_to edit, edit_customer_quotation_path(@quotation.customer, @quotation) ,:format => "html",:class=>"right"%>

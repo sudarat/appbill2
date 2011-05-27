@@ -1,0 +1,20 @@
+<% flash .each do |key, value| %>
+  <%= content_tag(:div, value, :class => "flash #{key}") %> 
+<% end %>
+
+<h1>ข้อมูลลูกค้า</h1>
+<p>
+  <b>ชื่อลูกค้า:</b>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <b>ที่อยู่:</b>
+  <%= @customer.address %>
+</p>
+
+<%= link_to 'Add quotation', new_customer_quotation_path(@customer),:format => "html"  %> |
+<%= link_to 'Add invoice', new_customer_invoice_path(@customer),:format => "html"  %> |
+<%= link_to 'Add bill', new_customer_bill_path(@customer),:format => "html"  %> |
+<%= link_to 'Edit customer', edit_customer_path(@customer),:format => "html" %>
+<!-- <%= link_to 'Back', customers_path %> -->

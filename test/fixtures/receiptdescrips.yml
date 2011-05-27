@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  recd_descrip: MyString
+  recd_quantity: 1
+  recd_unitprice: 1
+  receipt: 
+
+two:
+  recd_descrip: MyString
+  recd_quantity: 1
+  recd_unitprice: 1
+  receipt: 
