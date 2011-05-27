@@ -22,3 +22,6 @@
   </tr>
 <% end %>
 </table>
+
+<% cookies[:back] = request.referer %>
+<%= link_to back, cookies[:back],:format => "html" %>

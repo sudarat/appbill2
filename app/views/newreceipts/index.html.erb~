@@ -16,7 +16,7 @@
     <td></td>
     <td><%= customer.address %></td>
      <td><!--<%= link_to edit, edit_customer_path(customer,:format => "html") ,:class => "right" %> -->
-      <%= link_to ok,new_customer_bill_path(customer,:format => "html"),:class => "right"%>
+      <%= link_to ok,new_customer_receipt_path(customer,:format => "html"),:class => "right"%>
     </td>
     <!-- <td><%= link_to 'Destroy', customer, :confirm => 'Are you sure?', :method => :delete %></td> -->
   </tr>

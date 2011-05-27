@@ -46,7 +46,7 @@ class Receipt < ActiveRecord::Base
 	total += detail.unit_price*detail.quantity
     end
     
-    total = total + ((total * 7)/100)
+    #total = total + ((total * 7)/100)
     
     return total
   end

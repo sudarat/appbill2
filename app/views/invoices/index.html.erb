@@ -3,14 +3,14 @@
 <% flash .each do |key, value| %>
   <%= content_tag(:div, value, :class => "flash #{key}") %> 
 <% end %>
-<%= link_to new, newinvoices_path,:format => "html" , :class => "right"%>
+<%= link_to newinvoice, newinvoices_path,:format => "html" , :class => "right"%>
 <table>
   <tr>
-    <th width="5%">Invoice-ID</th>
+    <th width="5%">No.</th>
     <th></th>
-    <th width="10%">Customer</th>
+    <th width="30%">Customer</th>
     <th></th>
-    <th width="55%">Invoice</th>
+    <th width="35%">Title</th>
     <th></th>
     <th width="20%"></th>
   </tr>

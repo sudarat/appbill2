@@ -1,20 +1,24 @@
+<% cookies[:this] = request.request_uri %>
+
 <h1><center>Customers</center></h1>
 
 <% flash .each do |key, value| %>
   <%= content_tag(:div, value, :class => "flash #{key}") %> 
 <% end %>
-<%= link_to new, new_customer_path,:format => "html" ,:class=>"right" %>
+<%= link_to newcustomer, new_customer_path,:format => "html" ,:class=>"right" %>
 <table>
+
   <tr>
-    <th width = 100px>Customer</th>
+    <th width="30%">Customer</th>
     <th></th>
-    <th>Address</th>
-    <th></th>
+    <th width="55%">Address</th>
+    <th width="15%"></th>
+
   </tr>
 
 <% @customers.each do |customer| %>
   <tr>
-    <td width = 100px><%= customer.name %></td>
+    <td><%= customer.name %></td>
     <td></td>
     <td><%= customer.address %></td>
     <!-- <td><%= link_to 'เลือก', customer %></td> -->

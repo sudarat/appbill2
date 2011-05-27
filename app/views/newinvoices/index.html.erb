@@ -9,7 +9,7 @@
     <th>Address</th>
     <th></th>
   </tr>
-<%= link_to new, new_customer_path,:format => "html" ,:class=>"right"%>
+<%= link_to newcustomer, new_customer_path,:format => "html" ,:class=>"right"%>
 <% @customers.each do |customer| %>
   <tr>
     <td width = 100px><%= customer.name %></td>

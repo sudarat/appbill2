@@ -1,6 +1,5 @@
 class Billdescrip < ActiveRecord::Base
   belongs_to :bill
-  
   #validates_presence_of :description,:quantity,:unit_price
   
   validate do |bill|

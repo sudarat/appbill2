@@ -32,7 +32,7 @@
   </div>
 
   <div class = "actions">
-    <center><%= b.submit %></center>
+    <center><%= b.submit 'update'%></center>
   </div>
 <% end %>
 

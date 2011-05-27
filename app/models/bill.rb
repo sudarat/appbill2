@@ -11,8 +11,8 @@ class Bill < ActiveRecord::Base
 	html += "<tr valign=middle height=25>
 		  <td class=bordertop borderright ><font size = 2>#{detail.description}</font></td>
 		  <td align= right class=borderdetail><font size = 2>#{detail.quantity}</font></td> 
-		  <td align= right class=borderdetail><font size = 2>#{detail.unit_price}.00</font></td> 
-		  <td align=right class=bordertop><font size=2>#{detail.unit_price*detail.quantity}.00</font></td>
+		  <td align= right class=borderdetail><font size = 2><img src=/images/b.jpg , align=left>#{detail.unit_price}.00</font></td> 
+		  <td align=right class=bordertop><font size=2><img src=/images/b.jpg , align=left>#{detail.unit_price*detail.quantity}.00</font></td>
 		 </tr>"
     end
     

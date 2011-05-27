@@ -1,5 +1,10 @@
 <header>
 
-<%= link_to h_home,root_path %><%= link_to h_customer,customers_path%><%= link_to h_quota,quotations_path%><%= link_to h_inv,invoices_path%><%= link_to h_bill,bills_path%><%= link_to h_tax,'#'%>
+<%= link_to h_home,root_path %><%= link_to h_customer,customers_path%><%= link_to h_quota,quotations_path%><%= link_to h_inv,invoices_path%><%= link_to h_bill,receipts_path%><%= link_to h_tax,bills_path%>
+<% if cookies[:this]== "/customers" %>
+<%= cookies[:this]%>
+<%end%>
+
+
 
  </header>

@@ -1,18 +1,18 @@
 <html>
-<h1 align = center>Bills</h1>
+<h1 align = center>Tax invoices</h1>
 
 <% flash .each do |key, value| %>
   <%= content_tag(:div, value, :class => "flash #{key}") %> 
 <% end %>
 
-<%= link_to new, newbills_path,:format => "html" , :class => "right"%>
+<%= link_to newbill, newbills_path,:format => "html" , :class => "right"%>
 <table>
   <tr>
-    <th width="5%">Bill-ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th width="5%">No.</th>
     <th></th>
-    <th width="10%">Customer</th>
+    <th width="30%">Customer</th>
     <th></th>
-    <th width="55%">Bill</th>
+    <th width="35%">Title</th>
     <th></th>
     <th width="20%"></th>
   </tr>

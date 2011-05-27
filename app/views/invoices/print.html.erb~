@@ -31,7 +31,7 @@
   <tr><td></td></tr>
   <tr><td></td></tr>
 <!--   <tr><td colspan=3 align="center" valign="bottom" height="90px"><h2>ใบส่งของ/ใบแจ้งหนี้</h2></td></tr> -->
-  <tr><td colspan=3 valign="middle"><p><font size=2>PROJECT TITLE : <%= @invoice.title %></p></font></td></tr>
+  <tr height=25><td colspan=3 valign="middle"><p><font size=2>PROJECT TITLE : <%= @invoice.title %></p></font></td></tr>
   <tr><td></td></tr>
   <tr><td></td></tr>
   <tr><td colspan=3 valign="top">
@@ -47,19 +47,19 @@
     <tr class="bordertop" valign=middle height=25>
       <td colspan=2></td> 
       <td class="borderright" align="center"><font size=2>Subtotal</font></td> 
-      <td align= right class="bordertop"><font size=2><%= @invoice.subtotal_html %>.00</font></td>
+      <td class="bordertop"><font size=2><img src=/images/b.jpg align=left><%= @invoice.subtotal_html %>.00</font></td>
     </tr>
 
     <tr class="bordertop" valign=middle height=25>
       <td colspan=2 class="bordertop"></td> 
       <td class="borderright" align="center"><font size=2>Tax 7.00%</font></td> 
-      <td align= right  class="bordertop"><font size=2><%= @invoice.tax_html %>.00</td>
+      <td class="bordertop"><font size=2><img src=/images/b.jpg  align=left><%= @invoice.tax_html %>.00</td>
     </tr>
 
     <tr class="bordertop" valign=middle height=25>
       <td colspan=2 class="bgdescinv"></td>
       <td class="borderright bgdescinv" align="center"><font size=2 color="FFFFFF"><b>Total</b></font></td> 
-      <td align= right  class="bgdescinv"><font size=2 color="FFFFFF"><b><%= @invoice.total_html %>.00</b></td> 
+      <td align= right  class="bgdescinv"><font size=2 color="FFFFFF"><img src=/images/br.jpg  align=left><b><%= @invoice.total_html %>.00</b></td> 
     </tr>
   </table>
   </td></tr>

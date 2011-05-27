@@ -1,3 +1,4 @@
-<h2>เพิ่มโปรเจค</h2>
+<h2>New bill</h2>
 <%= render "bills/form" %>
-<%= link_to back, @customer,:format => "html" %>
+<% cookies[:back] = request.referer %>
+<%= link_to back, cookies[:back],:format => "html" %>

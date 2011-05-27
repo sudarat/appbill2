@@ -28,8 +28,24 @@ module ApplicationHelper
     image_tag("icon-delete.gif",:title => "delete",:alt => "Delete",:width => "20",:height => "20")
   end
 
-  def new
-    image_tag("icon-addcustomer.jpeg",:title => "new",:alt => "new",:width => "25",:height => "25")
+  def newcustomer
+    image_tag("icon-addcustomer.jpeg",:title => "new customer",:alt => "new customer",:width => "25",:height => "25")
+  end
+  
+  def newquotation
+    image_tag("icon-addcustomer.jpeg",:title => "new quotation",:alt => "new",:width => "25",:height => "25")
+  end
+  
+  def newinvoice
+    image_tag("icon-addcustomer.jpeg",:title => "new invoice",:alt => "new",:width => "25",:height => "25")
+  end
+  
+  def newreceipt
+    image_tag("icon-addcustomer.jpeg",:title => "new receipt",:alt => "new",:width => "25",:height => "25")
+  end
+  
+  def newbill
+    image_tag("icon-addcustomer.jpeg",:title => "new bill",:alt => "new",:width => "25",:height => "25")
   end
   
   def back
@@ -66,6 +82,10 @@ module ApplicationHelper
   
   def foot
     image_tag("foot.jpg")
+  end
+  
+  def B
+    image_tag("b.jpg")
   end
 
   

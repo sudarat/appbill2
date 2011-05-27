@@ -1,4 +1,4 @@
 <h2>New Invoice</h2>
 <%= render "invoices/form" %>
-<% cookies[:back] = request.referer %>
+
 <%= link_to back, cookies[:back],:format => "html" %>

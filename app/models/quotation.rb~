@@ -6,12 +6,7 @@ class Quotation < ActiveRecord::Base
   
   #validate do |quotation|
   #  quotation.errors.add_to_base("Project Title can't be blank") if quotation.quo_title.blank?
-  #end
-  
-  def bath
-    b = ฿
-    return cond
-  end  
+  #end 
   
   def details_html
     html = ""
