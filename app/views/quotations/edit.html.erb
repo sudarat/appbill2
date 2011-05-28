@@ -32,11 +32,11 @@
   </div>
   <div class="field">
     <%= q.label :title , 'Project title'%><b> : </b>
-    <%= q.text_field :title ,:size=>60 %> <b><font color=red>&nbsp;*</font></b>
+    <%= q.text_field :title ,:size=>"61%" %> <b><font color=red>&nbsp;*</font></b>
   </div>
   <div class="field">
     <%= q.label :detail %><b> : </b>
-    <%= q.text_field :detail ,:size=>64 %> <b><font color=red>&nbsp;*</font></b>
+    <%= q.wysihat_editor :detail ,:buttons=>[]%> <b><font color=red>&nbsp;*</font></b>
   </div>
   <div class="field">
     <%= q.label :terms %><b> : </b>

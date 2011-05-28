@@ -8,7 +8,6 @@ class Invoicedescrip < ActiveRecord::Base
     invoive.errors.add_to_base("Description can't be blank") if invoive.description.blank?
     invoive.errors.add_to_base("Quantity not '0'") if invoive.quantity == 0
     invoive.errors.add_to_base("Quantity can't be blank") if invoive.quantity.blank?
-    invoive.errors.add_to_base("Unit Price not '0'") if invoive.unit_price == 0
     invoive.errors.add_to_base("Unit Price can't be blank") if invoive.unit_price.blank?
   end
 end

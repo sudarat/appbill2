@@ -8,7 +8,10 @@
 <h1 align = center>ใบเสนอราคา</h1>
 <font size=3>
   <b>Project title : </b><%= @quotation.title %><br />
-  <b>Detail : </b><%= @quotation.detail %><br />
+  <b>Detail : </b>
+    <% @quotation.detail.split(/<p>|<\/p>|\r\n/).each do |condition| %>
+      <%= raw(condition) %>
+    <% end %><br />
   <b>Terms : </b><%= @quotation.terms %> Days<br />
 </font>
 

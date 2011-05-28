@@ -8,7 +8,7 @@
 <h1 align = center>ใบเสนอราคา</h1>
 <font size=3>
   <b>Project title : </b><%= @quotation.title %><br />
-  <b>Detail : </b><%= @quotation.detail %><br />
+  <b>Detail : </b><%= raw(@quotation.detail) %><br />
   <b>Terms : </b><%= @quotation.terms %> Days<br />
 </font>
 
@@ -66,7 +66,7 @@
 <!--   <%= h= (@quotation.condition.length)/90%> -->
   <% line=0 %>
   <% if (@quotation.condition != "")%>
-    <b>เงืือนไขการรับประกัน : </b>
+    <b>เงื่อนไขการรับประกัน : </b>
     <%= raw(@quotation.condition) %>
   <% end %>
 

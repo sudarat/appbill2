@@ -32,11 +32,11 @@
   </div>
   <div class="field">
     <%= q.label :title , 'Project title'%><b> : </b>
-    <%= q.text_field :title ,:size=>60 %> <b><font color=red>&nbsp;*</font></b>
+    <%= q.text_field :title ,:size=>"60%" %> <b><font color=red>&nbsp;*</font></b>
   </div>
   <div class="field">
     <%= q.label :detail %><b> : </b>
-    <%= q.text_field :detail ,:size=>64 %> <b><font color=red>&nbsp;*</font></b>
+    <%= q.wysihat_editor :detail ,:buttons=>[]%> <b><font color=red>&nbsp;*</font></b>
   </div>
   <div class="field">
     <%= q.label :terms %><b> : </b>
@@ -44,7 +44,8 @@
   </div>
   <div class="field">
     <%= q.label :condition %><b> : </b><br />
-    <%= q.wysihat_editor :condition ,:class => "condition" ,:buttons => [:bold, :italic, :underline, :strikethrough, :h1, :h2, :h3, :p, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html,:paste]%>
+    <%= q.wysihat_editor :condition ,:class => "condition" ,
+      :buttons => [:bold, :italic, :underline, :strikethrough, :h1, :h2, :h3, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html,:paste]%>
   </div>
 
   <center>

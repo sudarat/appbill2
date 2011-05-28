@@ -7,7 +7,7 @@
     <table border=0 width ="100%" class="tdesc " >
     <tr>
       <td width="38%" valign="top"><%= image_tag("logo.jpg",:width => "170",:height => "60")%></td> 
-      <td width="50%" valign="botton"><p style="margin-top : 1.5em;"><b><font size=4>ใบสำคัญรับเงิน</font></p></b></td> 
+      <td width="50%" valign="botton"><p style="margin-top : 1.5em;"><b><font size=4>ใบส่งของ/ใบแจ้งหนี้</font></p></b></td> 
     </tr>
     </table>
   </td></tr>
@@ -15,8 +15,8 @@
   <tr><td></td></tr>
   <tr height=25>
     <td valign="top"><font size=3> บริษัท โค้ด แอพพ์ จำกัด</font></td>
-    <td valign="top"><font size=3><b>เลขที่:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
-    <%= "%02d" % @receipt.id%>/<%= Time.now.year+543 %></font></td>
+    <td valign="top"><font size=3><b>No: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+    <%= "%02d" % @receipt.id%>/<%= Time.now.year+543 %><font color="FFFFFF">เ</font></font></td>
   </tr>
   <tr height=25>
     <td valign="top"><font size=3>97/9 หมู่ 9 หมู่บ้านโฮมเพลส สตอรี่ 2 </font></td>
@@ -25,7 +25,7 @@
   </tr>
   <tr height=25>
     <td valign="top"><font size=3>ถ.บางกรวย-ไทรน้อย ต.บางเลน อ.บางใหญ่ จ.นนทบุรี<br /></font></td>
-    <td valign="top"><font size=3><b>เลขประจำตัวผู้เสียภาษี:</b> 3-0343-3039-6</font></td>
+    <td valign="top" width="44%"><font size=3><b>เลขประจำตัวผู้เสียภาษี:</b> 3-0343-3039-6</font></td>
   </tr>
 </THEAD>
 <TBODY>
@@ -69,7 +69,7 @@
       <td class="bgdescinv bordertop"></td>
       <td class="borderright bgdescinv bordertop"></td>
 <!--       <td class="bgdescinv bordertop">฿</td> -->
-      <td align= right class="bgdescinv bordertop"><font size=2 color="FFFFFF"><b><%= @receipt.total_html %>.00</b></td> 
+      <td align= right class="bgdescinv bordertop"><font size=2 color="FFFFFF"><img src=/images/br.jpg  align=left><b><%= @receipt.total_html %>.00</b></td> 
     </tr>
   </table>
   </td></tr>

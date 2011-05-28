@@ -12,19 +12,50 @@
   </td></tr>
   <tr><td></td></tr>
   <tr><td></td></tr>
+<!--
   <tr height=25>
-    <td valign="top"><font size=3><b>ผู้ซื้อ:</b>&nbsp;&nbsp;<%= @customer.name %></font></td>
+    <td valign="top" width="10%"><font size=3><b>ผู้ซื้อ:</b></font></td>
+    <td valign="top" width="45%"><font size=3 color="#FFFFFF">เ</font><font size=3><%= @customer.name %></font></td>
     <td valign="top" width="45%"><font size=3><b>เลขที่:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
     <%= "%02d" % @bill.id%>/<%= Time.now.year+543 %></font></td>
   </tr>
   <tr height=25>
-    <td ROWSPAN=2 valign="top" height=50><b>ที่อยู่:</b>&nbsp;&nbsp;<%= @customer.address %></td>
+<!--     <td ROWSPAN=2 valign="top" height=50><b>ที่อยู่:</b></td><tr><td></td></tr> -->
+<!--     <td ROWSPAN=2 valign="top" height=50><%= @customer.address %></td><tr><td></td></tr> -->
+<!--
+    <td rowspan=2 valign="top"><font size=3></font></td>
+    <td rowspan=2 valign="top"><font size=3 color="#FFFFFF">เ</font><font size=3><%= @customer.address %></font></td>
     <td valign="top"><font size=3><b>วันที่:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
     <%= Time.now.day%>/<%= "%02d" % Time.now.month%>/<%= Time.now.year+543 %></font></td>
   </tr>
   <tr height=25>
     <td valign="top"><font size=3><b>เลขประจำตัวผู้เสียภาษี:</b> 3-0343-3039-6</font></td>
   </tr>
+-->
+
+
+  <tr height=75>
+    <td valign="top" width="10%"><font size=3><b>ผู้ซื้อ:</b></font></td>
+    <td valign="top" width="45%">
+      <p class="hp"><font size=3><%= @customer.name %></font><br />
+      <font size=3><%= @customer.address %></font><font size=3 color="#FFFFFF">เ</font></p>
+    </td>
+    
+<!--     <td ROWSPAN=2 valign="top" height=50><b>ที่อยู่:</b></td><tr><td></td></tr> -->
+<!--     <td ROWSPAN=2 valign="top" height=50><%= @customer.address %></td><tr><td></td></tr> -->
+
+<!--     <td rowspan=2 valign="top"><font size=3></font></td> -->
+<!--     <td rowspan=2 valign="top"></td> -->
+    <td valign="top" width="45%" class="hp">
+      <font size=3><b>No: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+      <%= "%02d" % @bill.id%>/<%= Time.now.year+543 %></font><br />
+      <font size=3><b>วันที่:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+      <%= Time.now.day%>/<%= "%02d" % Time.now.month%>/<%= Time.now.year+543 %></font><br />
+      <font size=3><b>เลขประจำตัวผู้เสียภาษี:</b> 3-0343-3039-6</font>
+  </tr>
+
+
+
 </THEAD>
 <TBODY>
   <tr><td></td></tr>

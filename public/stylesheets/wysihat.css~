@@ -56,10 +56,12 @@ div.editor_toolbar span {
 
 iframe.editor {
   border: 1px solid #999;
+/*   height: 400px; */
   height: 200px;
-  width: 100%; }
+  width: 50%; }
   
   iframe.showeditor {
   border: 0px solid #999;
-  height: 400px;
+/*   height: 400px; */
+  height: 200px;
   width: 100%; }

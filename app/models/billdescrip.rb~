@@ -1,8 +1,5 @@
 class Billdescrip < ActiveRecord::Base
   belongs_to :bill
-  def B
-    image_tag("b.jpg")
-  end
   #validates_presence_of :description,:quantity,:unit_price
   
   validate do |bill|

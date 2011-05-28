@@ -15,8 +15,8 @@
   <tr><td></td></tr>
   <tr height=25>
     <td valign="top"><font size=3> บริษัท โค้ด แอพพ์ จำกัด</font></td>
-    <td valign="top"><font size=3><b>เลขที่:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
-    <%= "%02d" % @quotation.id%>/<%= Time.now.year+543 %></font></td>
+    <td valign="top"><font size=3><b>No: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+    <%= "%02d" % @quotation.id%>/<%= Time.now.year+543 %><font color="FFFFFF">เ</font></font></font></td>
   </tr>
   <tr height=25>
     <td valign="top"><font size=3>97/9 หมู่ 9 หมู่บ้านโฮมเพลส สตอรี่ 2 </font></td>
@@ -25,14 +25,18 @@
   </tr>
   <tr height=25>
     <td valign="top"><font size=3>ถ.บางกรวย-ไทรน้อย ต.บางเลน อ.บางใหญ่ จ.นนทบุรี<br /></font></td>
-    <td valign="top" width="44%"><font size=3><b>เลขประจำตัวผู้เสียภาษี:</b> 3-0343-3039-6</font></td>
+    <td valign="top" width="42%"><font size=3><b>เลขประจำตัวผู้เสียภาษี:</b> 3-0343-3039-6</font></td>
   </tr>
 </THEAD>
 <TBODY>
   <tr><td></td></tr>
   <tr><td></td></tr>
   <tr height=25><td colspan=3 valign="middle"><font size=3>PROJECT TITLE : <%= @quotation.title %><br /></font></td></tr>
-  <tr height=25><td colspan=3 valign="middle"><font size=3>DETAIL : <%= @quotation.detail %><br /></font></td></tr>
+  <tr height=25><td colspan=3 valign="middle"><font size=3>DETAIL : 
+    <% @quotation.detail.split(/<p>|<\/p>|\r\n/).each do |condition| %>
+      <%= raw(condition) %>
+    <% end %>
+  <br /></font></td></tr>
 <!--   <tr height=25><td colspan=3 valign="middle"><font size=3>INVOICE NUMBER : <%= @quotation.id%>-<%= (@quotation.created_at.year)+543 %><br /></font></td></tr> -->
   <tr height=25><td colspan=3 valign="middle"><font size=3>TERMS : <%= @quotation.terms %> Days<br /></font></td></tr>
 
@@ -69,7 +73,7 @@
 
     
     <% if (@quotation.condition != "")%>
-    <tr valign="bottom"><td colspan=3><font size=2>เงื่อนไขการรับประกัน<br />
+    <tr valign="bottom"><td colspan=4><font size=2>เงื่อนไขการรับประกัน<br />
 
     <% @quotation.condition.split(/<p>|<\/p>|\r\n/).each do |condition| %>
       <%= raw(condition) %>

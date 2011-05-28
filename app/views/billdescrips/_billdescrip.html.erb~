@@ -10,7 +10,7 @@
   </tr>
 
 <% @bill.billdescrips.each do |billdescrip| %> 
-<tr width="700">
+<tr>
   <td width="350"><%= billdescrip.description %></td>
   <td></td>
   <td width="25"><center><%= billdescrip.quantity %></center></td>

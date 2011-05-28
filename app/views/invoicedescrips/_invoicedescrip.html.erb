@@ -15,7 +15,7 @@
   <td></td>
   <td width="25"><center><%= invoicedescrip.quantity %></center></td>
   <td></td>
-  <td width="100"><center><%= invoicedescrip.unit_price %></center></td>
+  <td width="100"><center><%= invoicedescrip.unit_price %>.00</center></td>
   <td></td>
   <td><!-- <%= link_to 'show',([invoicedescrip.invoice.customer,invoicedescrip.invoice,invoicedescrip]) %> -->
      <%= link_to edit, edit_customer_invoice_invoicedescrip_path(invoicedescrip.invoice.customer,invoicedescrip.invoice,invoicedescrip),:format => "html" %>
